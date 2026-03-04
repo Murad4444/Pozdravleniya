@@ -28,7 +28,7 @@ class Mart8Screen extends StatelessWidget {
         children: [
           const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: _opencard,
+            //onPressed: _opencard,
             child: const Text("Открыть!"),
           ),
         ],
