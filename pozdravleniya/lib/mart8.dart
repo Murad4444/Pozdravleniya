@@ -4,9 +4,9 @@ class Mart8Screen extends StatelessWidget {
   const Mart8Screen({super.key});
 
   // Если тебе нужна функция для кнопки, опиши её здесь
-  void _opencard() {
+  //void _opencard() {
     
-  }
+  //}
 
   @override
   Widget build(BuildContext context) {
