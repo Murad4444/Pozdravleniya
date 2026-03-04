@@ -5,7 +5,7 @@ class Mart8Screen extends StatelessWidget {
 
   // Если тебе нужна функция для кнопки, опиши её здесь
   void _opencard() {
-    print('hello it is a test' ) 
+    print('hello it is a test'); 
     
   }
 
