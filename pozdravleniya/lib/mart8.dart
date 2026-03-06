@@ -9,6 +9,12 @@ class Mart8Screen extends StatelessWidget {
     
   }
 
+  // Если тебе нужна функция для кнопки, опиши её здесь
+  void _closecard() {
+    print('hello it is a test'); 
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +37,11 @@ class Mart8Screen extends StatelessWidget {
           ElevatedButton(
             onPressed: _opencard,
             child: const Text("Открыть!"),
+          ),
+
+          ElevatedButton(
+            onPressed: _closecard,
+            child: const Text("Закрыть!"),
           ),
         ],
       ),
