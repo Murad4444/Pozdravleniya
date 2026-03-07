@@ -8,22 +8,18 @@ class Mart8Screen extends StatefulWidget {
 }
 
 class _Mart8ScreenState extends State<Mart8Screen> {
-  // 1. Переменная должна быть ТУТ, внутри State
   bool _isImageVisible = false;
 
-  // Если тебе нужна функция для кнопки, опиши её здесь
   void _opencard() {
     setState(() {
       _isImageVisible = true;
-      
     }); 
-    
   }
 
-  // Если тебе нужна функция для кнопки, опиши её здесь
   void _closecard() {
-    _isImageVisible = false; 
-    
+    setState(() {
+      _isImageVisible = false;
+    }); 
   }
 
   @override
@@ -31,40 +27,36 @@ class _Mart8ScreenState extends State<Mart8Screen> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false, 
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-        ],
+        leading: IconButton(
+          icon: const Icon(Icons.home),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start, 
-        crossAxisAlignment: CrossAxisAlignment.center, 
-        children: [
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center, 
+          children: [
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: _opencard,
+              child: const Text("Открыть!"),
+            ),
+            ElevatedButton(
+              onPressed: _closecard,
+              child: const Text("Закрыть!"),
+            ),
+            const SizedBox(height: 20),
 
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: _opencard,
-            child: const Text("Открыть!"),
-          ),
-
-          ElevatedButton(
-            onPressed: _closecard,
-            child: const Text("Закрыть!"),
-          ),
-          const SizedBox(height: 20),
-
-          // Твоя картинка из папки assets
-        if (_isImageVisible) 
+            if (_isImageVisible) 
               Image.asset(
-                'assets/my_image.jpg',
+                'assets/pozdra.png',
                 width: 200,
               ),
-        ],
-      ),
-    );
+          ], // Закрываем children
+        ), // Закрываем Column
+      ), // Закрываем Center
+    ); // Закрываем Scaffold
   }
 }
