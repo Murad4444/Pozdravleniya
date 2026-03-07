@@ -34,29 +34,35 @@ class _Mart8ScreenState extends State<Mart8Screen> {
           },
         ),
       ),
-      body: Center(
+    body: Center( // Добавляем Center, чтобы Column был в середине экрана
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center, 
+          mainAxisAlignment: MainAxisAlignment.start, 
+          // crossAxisAlignment теперь будет работать правильно внутри Center
+          crossAxisAlignment: CrossAxisAlignment.center, 
           children: [
-            const SizedBox(height: 20),
+            const SizedBox(height: 50), 
             ElevatedButton(
-              onPressed: _opencard,
+              onPressed: _opencard, 
               child: const Text("Открыть!"),
             ),
+            const SizedBox(height: 10), // Небольшой отступ между кнопками
             ElevatedButton(
-              onPressed: _closecard,
+              onPressed: _closecard, 
               child: const Text("Закрыть!"),
             ),
-            const SizedBox(height: 20),
+            
+            const SizedBox(height: 30), 
 
             if (_isImageVisible) 
               Image.asset(
                 'assets/pozdra.png',
-                width: 200,
+                // Картинка будет занимать 90% ширины экрана — это очень крупно!
+                width: MediaQuery.of(context).size.width * 0.9, 
+                fit: BoxFit.contain, // ИСПРАВЛЕНО: BoxFit вместо Widget
               ),
-          ], // Закрываем children
-        ), // Закрываем Column
-      ), // Закрываем Center
+          ],
+        ),
+        ),
     ); // Закрываем Scaffold
   }
 }
