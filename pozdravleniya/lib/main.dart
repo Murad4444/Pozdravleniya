@@ -21,7 +21,7 @@ class pzdrapp extends StatefulWidget {
 
 class _pzdrappState extends State<pzdrapp> {
   // ТЕКУЩАЯ ВЕРСИЯ (когда выпустишь обновление, в новом коде поменяй на 2)
-  final int currentBuildNumber = 1; 
+  final int currentBuildNumber = 2; 
   final String jsonUrl = "https://raw.githubusercontent.com/Murad4444/Pozdravleniya/refs/heads/main/pozdravleniya/version.json";
   
   Timer? _updateTimer;
