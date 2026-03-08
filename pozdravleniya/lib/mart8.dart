@@ -42,11 +42,13 @@ class _Mart8ScreenState extends State<Mart8Screen> {
           children: [
             const SizedBox(height: 50), 
             ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.pink),
               onPressed: _opencard, 
               child: const Text("Открыть!"),
             ),
             const SizedBox(height: 10), // Небольшой отступ между кнопками
             ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.pinkAccent),
               onPressed: _closecard, 
               child: const Text("Закрыть!"),
             ),
